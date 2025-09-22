@@ -1,0 +1,48 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./components/TrustBadges.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Inline trust badges (minimal capsules) */
+.TrustBadges_inline__Msatw {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  align-items: center;
+}
+
+.TrustBadges_pill__kft5I {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: transparent;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.TrustBadges_pill__kft5I:hover {
+  border-color: rgba(0,0,0,0.26);
+}
+
+.TrustBadges_dark__nJ26c .TrustBadges_pill__kft5I {
+  border-color: rgba(255,255,255,0.22);
+}
+
+.TrustBadges_icon__90WtG {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.TrustBadges_text__DVVof {
+  font-weight: 600;
+}
+
+/* Small screens */
+@media (max-width: 640px) {
+  .TrustBadges_inline__Msatw { gap: 8px; }
+  .TrustBadges_pill__kft5I { padding: 7px 10px; font-size: 13px; }
+  .TrustBadges_icon__90WtG { font-size: 15px; }
+}
+

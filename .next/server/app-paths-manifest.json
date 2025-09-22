@@ -1,0 +1,10 @@
+{
+  "/api/categories/route": "app/api/categories/route.js",
+  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
+  "/shop/page": "app/shop/page.js",
+  "/track/page": "app/track/page.js",
+  "/policies/terms/page": "app/policies/terms/page.js",
+  "/policies/privacy/page": "app/policies/privacy/page.js",
+  "/policies/shipping-returns/page": "app/policies/shipping-returns/page.js",
+  "/categories/page": "app/categories/page.js"
+}
