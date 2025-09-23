@@ -1,10 +1,13 @@
 {
-  "/api/categories/route": "app/api/categories/route.js",
+  "/api/preorders/route": "app/api/preorders/route.js",
+  "/api/payments/uddoktapay/create/route": "app/api/payments/uddoktapay/create/route.js",
+  "/api/payments/uddoktapay/callback/route": "app/api/payments/uddoktapay/callback/route.js",
   "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
-  "/shop/page": "app/shop/page.js",
   "/track/page": "app/track/page.js",
-  "/policies/terms/page": "app/policies/terms/page.js",
-  "/policies/privacy/page": "app/policies/privacy/page.js",
-  "/policies/shipping-returns/page": "app/policies/shipping-returns/page.js",
-  "/categories/page": "app/categories/page.js"
+  "/admin/preorder/page": "app/admin/preorder/page.js",
+  "/shop/page": "app/shop/page.js",
+  "/product/[slug]/page": "app/product/[slug]/page.js",
+  "/preorder-checkout/[slug]/page": "app/preorder-checkout/[slug]/page.js",
+  "/preorder-cancel/page": "app/preorder-cancel/page.js",
+  "/page": "app/page.js"
 }

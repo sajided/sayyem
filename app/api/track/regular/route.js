@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
 import { dbConnect } from "../../../../lib/db";
-async function ensureDB(){ await dbConnect(); }
-
-  } catch(e){
-    // ignore - fail later if models can't query
-  }
+async function ensureDB() {
+  await dbConnect();
 }
+
+  
 async function loadOrderModel(){
   try{
     const m = await import("../../../../models/Order.js").catch(()=>import("../../../../models/Order"));

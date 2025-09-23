@@ -11,15 +11,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
+    "/track/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/track/page.js"
+    ],
+    "/api/track/regular/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/track/regular/route.js"
+    ],
+    "/api/track/preorder/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/track/preorder/route.js"
+    ],
     "/admin/preorder/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/admin/preorder/page.js"
-    ],
-    "/api/admin/preorder/orders/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/admin/preorder/orders/route.js"
     ],
     "/api/admin/preorder/settings/route": [
       "static/chunks/webpack.js",
@@ -30,6 +40,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/admin/preorder/products/route.js"
+    ],
+    "/api/admin/preorder/orders/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/admin/preorder/orders/route.js"
     ],
     "/shop/page": [
       "static/chunks/webpack.js",
@@ -77,35 +92,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/payments/uddoktapay/create/route.js"
     ],
-    "/track/page": [
+    "/api/payments/uddoktapay/callback/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/track/page.js"
+      "static/chunks/app/api/payments/uddoktapay/callback/route.js"
     ],
-    "/policies/terms/page": [
+    "/preorder-cancel/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/policies/terms/page.js"
-    ],
-    "/policies/privacy/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/policies/privacy/page.js"
-    ],
-    "/policies/shipping-returns/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/policies/shipping-returns/page.js"
-    ],
-    "/categories/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/categories/page.js"
-    ],
-    "/api/categories/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/categories/route.js"
+      "static/chunks/app/preorder-cancel/page.js"
     ]
   }
 }

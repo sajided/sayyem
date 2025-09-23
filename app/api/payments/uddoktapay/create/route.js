@@ -25,18 +25,16 @@ export async function POST(req){
     const email = (order.email && order.email.includes("@")) ? order.email
                  : (order.phone ? `${String(order.phone).replace(/\D/g,"")}@toyrush.local` : "customer@toyrush.local");
     const payload = {
-full_name: order.name || "Customer",
+      full_name: order.name || "Customer",
       email,
       amount: String(amount),
       metadata: { order_id: String(order._id), orderId: String(order._id) },
       redirect_url: `${SITE}/api/payments/uddoktapay/callback`,
       cancel_url:   `${SITE}/api/payments/uddoktapay/callback?cancel=1`,
       return_type: "GET",
-    
-  cancel_url: `${base}/preorder-cancel`,
-  fail_url: `${base}/preorder-cancel`,
-  success_url: `${base}/preorder-success`,
-  callback_url: `${base}/api/payments/uddoktapay/callback`
+      fail_url: `${SITE}/preorder-cancel`,
+      success_url: `${SITE}/preorder-success`,
+      callback_url: `${SITE}/api/payments/uddoktapay/callback`
 };
     const r = await fetch(`${BASE}/api/checkout-v2`, {
       method: "POST",
