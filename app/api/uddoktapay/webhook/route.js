@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { dbConnect } from "../../../../lib/db";
-import Order from '../../../../../models/Order';
+import Order from "../../../../models/Order";
 async function verifyWithUddokta(invoiceId){
   const base = process.env.UDDOKTAPAY_BASE_URL || process.env.UDDOKTAPAY_BASE || 'https://sandbox.uddoktapay.com';
   const key = process.env.UDDOKTAPAY_API_KEY || process.env.UDDOKTAPAY_SANDBOX_API_KEY;

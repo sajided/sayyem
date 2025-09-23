@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { dbConnect } from "../../../../../lib/db";
-import Order from "../../../../../../models/Order";
+import Order from "../../../../../models/Order";
 async function ensureDB(){ await dbConnect(); }
 export async function GET(req) {
   await ensureDB();
