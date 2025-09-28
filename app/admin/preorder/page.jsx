@@ -106,15 +106,12 @@ function OrdersTable({
                 <Currency value={o.advanceDue} />
               </td>
               <td className="px-4 py-3 text-right">
-                <Currency value={o.advancePaid} />
+                <Currency value={o.paid} />
               </td>
               <td className="px-4 py-3">
                 {o.paid ? (<Badge kind="success">Paid</Badge>) : (<Badge kind="warn">Not paid</Badge>)}
                 <span className="ml-2 opacity-70 text-xs">({o.uddoktaStatus || (o.paid ? "PAID" : "PENDING")})</span>
-                <div className="mt-2 flex items-center gap-2 text-xs">
-                  <label className="flex items-center gap-1"><input type="checkbox" checked={!!o.preOrderAdvancePaid} onChange={e=>updateOrder(o, { preOrderAdvancePaid: e.target.checked })} /> Advance paid</label>
-                  <label className="flex items-center gap-1"><input type="checkbox" checked={!!o.preOrderBalancePaid} onChange={e=>updateOrder(o, { preOrderBalancePaid: e.target.checked })} /> Balance paid</label>
-                </div>
+                
               </td>
               <td className="px-4 py-3">
                 {/* Order Status Dropdown */}
@@ -323,6 +320,35 @@ export default function AdminPreorderPage() {
     }
   }
 
+  async function saveSettings() {
+    if (!settings) return;
+    const res = await fetch("/api/admin/preorder/settings", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(settings),
+    });
+    const data = await res.json();
+    if (data?.ok) {
+      await loadSettings();
+    }
+  }
+
+  async function updateProduct(p, patch) {
+    const id = p._id || p.id;
+    if (!id) return;
+    const res = await fetch(`/api/admin/preorder/products/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(patch),
+    });
+    const data = await res.json();
+    if (data?.ok) {
+      setProducts((prev) =>
+        prev.map((x) => (String(x._id || x.id) === String(id) ? data.data : x))
+      );
+    }
+  }
+
   return (
     <main className="container mx-auto max-w-6xl px-4 py-8">
       <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">
@@ -426,17 +452,6 @@ export default function AdminPreorderPage() {
       </div>
     </main>
   );
-}async function saveSettings(){
-  if(!settings) return;
-  const res = await fetch("/api/admin/preorder/settings", { method: "PUT", headers: { "Content-Type":"application/json" }, body: JSON.stringify(settings) });
-  const data = await res.json(); if(data?.ok){ await loadSettings(); }
-}
-
-async function updateProduct(p, patch){
-  const id = p._id || p.id; if(!id) return;
-  const res = await fetch(`/api/admin/preorder/products/${id}`, { method: "PUT", headers: { "Content-Type":"application/json" }, body: JSON.stringify(patch) });
-  const data = await res.json();
-  if(data?.ok){ setProducts(prev=> prev.map(x=> (String(x._id||x.id)===String(id)? data.data : x))); }
 }
 
 

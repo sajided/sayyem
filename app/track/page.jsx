@@ -122,7 +122,7 @@ export default function TrackPage(){
 
       <div className="mt-4 rounded-xl border border-black/10 p-1 inline-flex dark:border-white/10">
         <Tab active={tab==="regular"} onClick={()=>setTab("regular")}>Regular Order</Tab>
-        <Tab active={tab==="preorder"} onClick={()=>setTab("preorder")}>Pre‑order</Tab>
+        <Tab active={tab==="preorder"} onClick={()=>setTab("preorder")}>Pre‑order</Tab> 
       </div>
 
       {tab === "regular" && (
@@ -163,7 +163,7 @@ export default function TrackPage(){
           </div>
           {message && <div className="mt-3 text-sm opacity-70">{message}</div>}
         </section>
-      )}
+      )} 
 
       <div className="mt-6 text-sm opacity-70">
         Having trouble? <Link href="/contact" className="underline">Contact support</Link>

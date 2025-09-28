@@ -46,6 +46,7 @@ const OrderSchema = new Schema({
   uddoktaInvoiceId: { type: String, default: '' },
   paymentProvider: { type: String, default: '' },
 
+
   // bKash payment tracking
   bkashPaymentID: { type: String, default: '' },
   bkashTrxID: { type: String, default: '' },
@@ -63,6 +64,15 @@ const OrderSchema = new Schema({
   transactionId: { type: String, default: '' },
   uddoktaInvoiceId: { type: String, default: '' },
   paymentProvider: { type: String, default: '' },
+  
+  
+  advancePaid: { type: Number, default: 0 },
+  advanceDue: { type: Number, default: 0 },
+  advancePaidAt: { type: Date, default: null },
+  verified: { type: Boolean, default: false },
+  uddoktaStatus: { type: String, default: '' },
+  txnId: { type: String, default: '' }
+  
 
 }, { timestamps: true });
 
